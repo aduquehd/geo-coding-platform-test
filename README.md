@@ -7,6 +7,8 @@ Geo coding project allows to consume an API using the Geocoding and Reverse Geoc
 It is built using Python, Django, Django Rest Framework, and Vue js as Front-end framework and also *Leaflet* as 
 an interactive Graphical map to see the API responses.
 
+All the local and production architecture is created and deployed with Docker and Docker compose.
+
 Also there is an API to calculate the distance in kilometers in two coordinates (latitude and longitude).
 
 The API has unit test (Bellow is the description of how to run the unit test).
