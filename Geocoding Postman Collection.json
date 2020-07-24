@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "8c682d71-d086-4df1-be56-e7b2eb47daf3",
+		"name": "Geocoding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Geocode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/geocoding/get-geocode?latitude=6.1504856&longitude=-75.61687859",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"geocoding",
+						"get-geocode"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "6.1504856"
+						},
+						{
+							"key": "longitude",
+							"value": "-75.61687859"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Geo reverse Geocode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/geocoding/get-geocode?address=Sabaneta",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"geocoding",
+						"get-geocode"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "Sabaneta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Distance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/geocoding/get-distance?latitude1=6.150096&longitude1=-75.637175&latitude2=6.151131&longitude2=-75.643151",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"geocoding",
+						"get-distance"
+					],
+					"query": [
+						{
+							"key": "latitude1",
+							"value": "6.150096"
+						},
+						{
+							"key": "longitude1",
+							"value": "-75.637175"
+						},
+						{
+							"key": "latitude2",
+							"value": "6.151131"
+						},
+						{
+							"key": "longitude2",
+							"value": "-75.643151"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
