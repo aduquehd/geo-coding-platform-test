@@ -23,7 +23,7 @@ certificatesResolvers:
 http:
   routers:
     web-router:
-      rule: "Host(`saduqz.com`) || Host(`www.saduqz.com`)"
+      rule: "Host(`geocoding.saduqz.com`) || Host(`geocoding.saduqz.com`)"
       
       entryPoints:
         - web
