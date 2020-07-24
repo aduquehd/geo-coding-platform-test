@@ -1,0 +1,5 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=yes
+IPYTHONDIR=/app/.ipython
+GOOGLE_GEOCODING_API_KEY=AIzaSyC7xTfdxhDYYbubA0vnGYtNIkodxcP7Tz4

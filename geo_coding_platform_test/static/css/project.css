@@ -1,0 +1,13 @@
+.alert-debug {
+  color: #000;
+  background-color: #fff;
+  border-color: #d6e9c6;
+}
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+.geocoding-section {
+  margin-top: 15px;
+}

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+	<div id="app">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<h3>What you want to do?</h3>
+					<button v-on:click="showGeocoding" class="btn btn-info">Geocoding</button>
+					<button v-on:click="showReverseGeocoding" class="btn btn-success">Reverse Geocoding</button>
+					<button v-on:click="showDistance" class="btn btn-warning">Compare 2 distances</button>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<div v-show="show_geocoding" class="geocoding-section">
+
+					<form>
+						<div class="form-row">
+							<div class="col-md-6">
+								<input v-model="geocodeLatitude" type="text" class="form-control" placeholder="Latitude">
+							</div>
+							<div class="col-md-6">
+								<input v-model="geocodeLongitude" type="text" class="form-control" placeholder="Longitude">
+							</div>
+						</div>
+						<button v-on:click="searchGeocodeAction" type="button" class="btn btn-info search-button">Search</button>
+					</form>
+
+					<div v-show="showGeocodingFormattedAddress">
+						<div class="col-md-12">
+							{% verbatim %}
+							<h6>Formatted address: {{ geocodeFormattedAddress }} </h6>
+							{% endverbatim %}
+						</div>
+					</div>
+					<div id="geocodeMap" style="width: 100%; height: 500px"></div>
+
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div v-show="show_reverse_geocoding" class="geocoding-section">
+					<form>
+						<div class="form-row">
+							<div class="col-md-6">
+								<input v-model="reverseGeocodeAddress" type="text" class="form-control"
+											 placeholder="Example: El Poblado">
+							</div>
+						</div>
+						<button v-on:click="searchReverseGeocodeAction" type="button" class="btn btn-success search-button">
+							Search
+						</button>
+					</form>
+
+					<div v-show="showReverseGeocodingCoordinates">
+						<div class="col-md-12">
+							{% verbatim %}
+							<h6>Latitude: {{ reverseGeocodeLatitude }} </h6>
+							<h6>Longitude: {{ reverseGeocodeLongitude }} </h6>
+							{% endverbatim %}
+						</div>
+					</div>
+					<div id="reverseGeocodeMap" style="width: 100%; height: 500px"></div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div v-show="show_distance" class="geocoding-section">
+					<form>
+						<div class="form-row">
+							<div class="col-md-6">
+								<input v-model="distanceLatitude1" type="text" class="form-control" placeholder="Latitude 1">
+							</div>
+							<div class="col-md-6">
+								<input v-model="distanceLongitude1" type="text" class="form-control" placeholder="Longitude 1">
+							</div>
+						</div>
+						<br>
+						<div class="form-row">
+							<div class="col-md-6">
+								<input v-model="distanceLatitude2" type="text" class="form-control" placeholder="Latitude 2">
+							</div>
+							<div class="col-md-6">
+								<input v-model="distanceLongitude2" type="text" class="form-control" placeholder="Longitude 2">
+							</div>
+						</div>
+						<button v-on:click="searchDistanceAction" type="button" class="btn btn-warning search-button">
+							Compare Distances on KM
+						</button>
+					</form>
+
+					<div v-show="showDistanceValue">
+						<div class="col-md-12">
+							{% verbatim %}
+							<h6>Distance (kms): {{ distanceValue }} </h6>
+							{% endverbatim %}
+						</div>
+					</div>
+					<div id="reverseGeocodeMap" style="width: 100%; height: 500px"></div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+{% endblock %}
