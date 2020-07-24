@@ -33,7 +33,7 @@ http:
       service: django
 
     web-secure-router:
-      rule: "Host(`saduqz.com`) || Host(`www.saduqz.com`)"
+      rule: "Host(`geocoding.saduqz.com`) || Host(`geocoding.saduqz.com`)"
       
       entryPoints:
         - web-secure
